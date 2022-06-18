@@ -6,7 +6,7 @@ import {ThemeProvider as StyledTheme} from 'styled-components';
 export const ThemeContext = createContext();
 
 export default function ThemeProvider({children}) {
-   const [theme, setTheme] = useState(detectTheme());
+   const [theme, setTheme] = useState('white');
 
    useEffect(() => {
       window.localStorage.setItem('theme', theme);
