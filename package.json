@@ -1,5 +1,5 @@
 {
-   "name": "start-react",
+   "name": "todo-220625",
    "version": "0.1.0",
    "private": true,
    "homepage": "/",
@@ -7,7 +7,7 @@
    "readme": "README.md",
    "markdown": "github",
    "publisher": "@pmfoysal",
-   "description": "Basic Starter Project Setup for ReactJS!",
+   "description": "TodoApp - A Simple & Modern Todo Application!",
    "author": {
       "name": "Foysal Ahmmed",
       "email": "pmfoysal@gmail.com",
@@ -23,14 +23,16 @@
    ],
    "keywords": [
       "reactjs",
-      "starter-project",
-      "reactjs-project",
-      "reactjs-starter",
-      "reactjs-starter-project"
+      "nodejs",
+      "expressjs",
+      "mongodb",
+      "todo",
+      "todo-app",
+      "react-todo"
    ],
    "repository": {
-      "type": "source-code",
-      "url": "https://github.com/pmfoysal/start-react"
+      "type": "git",
+      "url": "https://github.com/pmfoysal/todo-220625"
    },
    "cracoConfig": "src/configs/craco.config.js",
    "dependencies": {
