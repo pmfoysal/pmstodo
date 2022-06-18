@@ -22,6 +22,7 @@ const themes = {
          brdr: '#cccccc',
          main: '#ffffff',
          sub: '#f5f7f9',
+         shadow: '0 0 1.25rem rgba(0, 0, 0, 0.1)',
       },
    },
    black: {

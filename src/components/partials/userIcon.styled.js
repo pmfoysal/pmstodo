@@ -16,25 +16,26 @@ export const UserIconImage = styled.img`
    overflow: hidden;
    transition: 0.1s ease;
    cursor: pointer;
-   transform: scale(1.1);
+   transform: scale(1.075);
 
    &:hover {
       opacity: 0.85;
    }
 
    &:active {
-      transform: scale(0.95);
+      transform: scale(1);
    }
 `;
 
 export const UserIconWindow = styled.div`
    position: absolute;
-   min-width: 22rem;
-   top: calc(100% + 2.5rem);
+   min-width: 20rem;
+   top: calc(100% + 2rem);
    right: 0;
-   padding: 3rem 3rem 2rem;
+   padding: 2.5rem 0 0;
    z-index: 20;
-   border-radius: 2rem;
+   overflow: hidden;
+   border-radius: 1rem;
    display: flex;
    align-items: center;
    justify-content: center;
@@ -93,14 +94,26 @@ export const UserWindowLink = styled(Link)`
    }
 `;
 
-export const UserWindowButton = styled.p`
+export const UserWindowButton = styled.button`
    display: flex;
    align-items: center;
    gap: 0.75rem;
    width: 100%;
-   padding-top: 2rem;
-   color: #ff4500;
+   margin-top: 2rem;
+   padding: 1.5rem 2rem;
+   color: ${({theme}) => theme.back.accent};
    cursor: pointer;
    text-transform: capitalize;
    font-weight: 550;
+   border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+   transition: 0.1s ease;
+
+   svg {
+      color: inherit;
+   }
+
+   &:hover {
+      background-color: ${({theme}) => theme.back.accent};
+      color: ${({theme}) => theme.text.main.head};
+   }
 `;
