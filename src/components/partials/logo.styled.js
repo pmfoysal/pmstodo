@@ -13,7 +13,7 @@ export const LogoContainer = styled.h1`
       font-size: inherit;
       line-height: inherit;
       font-weight: inherit;
-      text-transform: capitalize;
+      text-transform: lowercase;
       color: ${({theme}) => theme.back.accent};
       transition: inherit;
    }

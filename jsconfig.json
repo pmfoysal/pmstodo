@@ -20,6 +20,7 @@
          "@contexts/*": ["customs/contexts/*"],
          "@helpers/*": ["components/helpers/*"],
          "@utilities/*": ["customs/utilities/*"],
+         "@partials/*": ["components/partials/*"],
          "@middlewares/*": ["customs/middlewares/*"],
          "@validations/*": ["customs/validations/*"]
       }

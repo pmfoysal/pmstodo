@@ -12,7 +12,7 @@ export default function Logo() {
 
    return (
       <LogoContainer onClick={clickHandler}>
-         Pm<span>Todo</span>
+         Todo<span>app</span>
       </LogoContainer>
    );
 }

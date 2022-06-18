@@ -2,10 +2,6 @@ import React from 'react';
 import Button from 'components/partials/button';
 
 export default function Home() {
-   function clickHandler() {
-      console.log('Button Clicked!');
-   }
-
    return (
       <div style={{padding: '3rem', fontSize: '3rem', textAlign: 'center', fontWeight: 550}}>
          Welcome to React Starter Project Home Page!
