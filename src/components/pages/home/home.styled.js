@@ -7,10 +7,14 @@ export const HomeContainer = styled.section`
       display: grid;
       grid-template-columns: 25rem 1fr;
       gap: 4rem;
+      align-items: flex-start;
    }
 `;
 
 export const HomeContent = styled.article`
    background-color: ${({theme}) => theme.back.page};
    border-radius: 1.5rem;
+   height: calc(100vh - 20.9rem);
+   overflow-x: hidden;
+   overflow-y: auto;
 `;

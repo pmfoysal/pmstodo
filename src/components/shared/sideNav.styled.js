@@ -19,4 +19,5 @@ export const SideNavTitle = styled.h3`
    text-transform: capitalize;
    padding-bottom: 0.75rem;
    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1);
+   user-select: none;
 `;
