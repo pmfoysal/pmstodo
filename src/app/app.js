@@ -10,7 +10,7 @@ export default function App() {
          <Header />
          <Suspense fallback={<h1>Loading...</h1>}>
             <Routes>
-               <Route path='/' element={<Home />} />
+               <Route path='/' element={<Home />}></Route>
             </Routes>
          </Suspense>
          <Toaster />

@@ -4,6 +4,11 @@ export const SideNavContainer = styled.aside`
    padding: 2rem;
    border-radius: 1rem;
    background-color: ${({theme}) => theme.back.page};
+   display: flex;
+   flex-direction: column;
+   gap: 0.5rem;
+   text-align: left;
+   justify-content: flex-start;
 `;
 
 export const SideNavTitle = styled.h3`

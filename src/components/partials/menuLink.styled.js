@@ -8,10 +8,14 @@ export const MenuLinkContainer = styled.button`
    font-size: 1.5rem;
    color: ${({theme}) => theme.text.main.head};
    transition: 0.1s ease;
+   display: flex;
+   align-items: center;
+   justify-content: flex-start;
+   gap: 0.75rem;
 
    &:hover,
    &.active {
-      background-color: ${({theme}) => theme.back.page};
+      background-color: ${({theme}) => theme.back.sub};
    }
 
    &:active {
