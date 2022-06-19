@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
 export const MenuLinkContainer = styled.button`
-   padding: 0.5rem 1rem;
+   padding: 1.25rem 1.5rem;
    border-radius: 0.75rem;
    text-transform: capitalize;
    font-weight: 550;
    font-size: 1.5rem;
-   color: ${({theme}) => theme.text.main.head};
+   color: ${({theme}) => theme.text.main.para};
    transition: 0.1s ease;
    display: flex;
    align-items: center;
@@ -16,6 +16,7 @@ export const MenuLinkContainer = styled.button`
    &:hover,
    &.active {
       background-color: ${({theme}) => theme.back.sub};
+      color: ${({theme}) => theme.text.main.head};
    }
 
    &:active {

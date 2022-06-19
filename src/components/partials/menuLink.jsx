@@ -18,7 +18,7 @@ export default function MenuLink({name, link}) {
    }
 
    return (
-      <MenuLinkContainer onClick={clickHandler} className={setClassName}>
+      <MenuLinkContainer onClick={clickHandler} className={setClassName()}>
          {name}
       </MenuLinkContainer>
    );

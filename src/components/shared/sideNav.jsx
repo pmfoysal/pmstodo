@@ -9,6 +9,8 @@ export default function SideNav() {
          <MenuLink name='today' link='/' />
          <MenuLink name='tomorrow' link='/tomorrow' />
          <MenuLink name='overdue' link='/overdue' />
+         <MenuLink name='all todos' link='/all' />
+         <br />
          <SideNavTitle>todos by tag</SideNavTitle>
          <MenuLink name='personal' link='/personal' />
          <MenuLink name='office' link='/office' />

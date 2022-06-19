@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const SideNavContainer = styled.aside`
    padding: 2rem;
-   border-radius: 1rem;
+   border-radius: 1.5rem;
    background-color: ${({theme}) => theme.back.page};
    display: flex;
    flex-direction: column;
@@ -12,10 +12,11 @@ export const SideNavContainer = styled.aside`
 `;
 
 export const SideNavTitle = styled.h3`
-   font-size: 2rem;
+   font-size: 1.8rem;
    color: ${({theme}) => theme.text.main.head};
-   font-weight: 550;
+   font-weight: 700;
+   margin-bottom: 0.5rem;
    text-transform: capitalize;
-   padding-bottom: 1rem;
+   padding-bottom: 0.75rem;
    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1);
 `;
