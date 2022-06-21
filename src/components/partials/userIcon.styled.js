@@ -1,11 +1,11 @@
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const UserIconContainer = styled.div`
    display: inline-block;
 
    /* @media screen and (max-width: 700px) {
-      display: ${({main}) => (main ? 'none' : 'inline-block')};
+      display: ${({ main }) => (main ? 'none' : 'inline-block')};
    } */
 `;
 
@@ -40,8 +40,8 @@ export const UserIconWindow = styled.div`
    align-items: center;
    justify-content: center;
    flex-direction: column;
-   background-color: ${({theme}) => theme.back.page};
-   box-shadow: ${({theme}) => theme.back.shadow};
+   background-color: ${({ theme }) => theme.back.page};
+   box-shadow: ${({ theme }) => theme.back.shadow};
 
    @media screen and (max-width: 700px) {
       right: auto;
@@ -62,7 +62,7 @@ export const UserWindowName = styled.h1`
    white-space: nowrap;
    font-weight: 700;
    margin-top: 1.5rem;
-   color: ${({theme}) => theme.text.main.head};
+   color: ${({ theme }) => theme.text.main.head};
 `;
 
 export const UserWindowRole = styled.h3`
@@ -70,7 +70,7 @@ export const UserWindowRole = styled.h3`
    white-space: nowrap;
    font-weight: 550;
    margin-top: 0.25rem;
-   color: ${({theme}) => theme.back.accent};
+   color: ${({ theme }) => theme.back.accent};
 `;
 
 export const UserWindowLinks = styled.nav`
@@ -86,11 +86,11 @@ export const UserWindowLink = styled(Link)`
    align-items: center;
    gap: 0.75rem;
    padding: 0.25rem 0;
-   color: ${({theme}) => theme.text.main.para};
+   color: ${({ theme }) => theme.text.main.para};
 
    &:hover,
    &.active {
-      color: ${({theme}) => theme.back.accent};
+      color: ${({ theme }) => theme.back.accent};
    }
 `;
 
@@ -101,7 +101,7 @@ export const UserWindowButton = styled.button`
    width: 100%;
    margin-top: 2rem;
    padding: 1.5rem 2rem;
-   color: ${({theme}) => theme.back.accent};
+   color: ${({ theme }) => theme.back.accent};
    cursor: pointer;
    text-transform: capitalize;
    font-weight: 550;
@@ -113,7 +113,7 @@ export const UserWindowButton = styled.button`
    }
 
    &:hover {
-      background-color: ${({theme}) => theme.back.accent};
-      color: ${({theme}) => theme.text.main.head};
+      background-color: ${({ theme }) => theme.back.accent};
+      color: ${({ theme }) => theme.text.main.head};
    }
 `;

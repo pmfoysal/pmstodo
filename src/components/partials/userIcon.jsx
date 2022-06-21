@@ -1,6 +1,6 @@
-import {Icon} from '@iconify/react';
+import { Icon } from '@iconify/react';
 import avatar from '@icons/user.svg';
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 // import userSignout from 'customs/auth/userSignout';
 import {
    UserIconContainer,
@@ -12,7 +12,7 @@ import {
    UserWindowRole,
 } from './userIcon.styled';
 
-export default function UserIcon({user}) {
+export default function UserIcon({ user }) {
    const [active, setActive] = useState(false);
 
    function clickHandler() {

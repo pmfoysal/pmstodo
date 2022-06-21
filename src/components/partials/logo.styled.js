@@ -7,14 +7,14 @@ export const LogoContainer = styled.h1`
    display: inline-block;
    cursor: pointer;
    transition: 0.1s ease;
-   color: ${({theme}) => theme.text.main.title};
+   color: ${({ theme }) => theme.text.main.title};
 
    span {
       font-size: inherit;
       line-height: inherit;
       font-weight: inherit;
       text-transform: lowercase;
-      color: ${({theme}) => theme.back.accent};
+      color: ${({ theme }) => theme.back.accent};
       transition: inherit;
    }
 

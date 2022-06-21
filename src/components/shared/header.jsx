@@ -3,7 +3,7 @@ import Logo from '@partials/logo';
 import Button from '@partials/button';
 import UserIcon from '@partials/userIcon';
 import MainContainer from './mainContainer';
-import {HeaderContainer, HeaderRightSide} from './header.styled';
+import { HeaderContainer, HeaderRightSide } from './header.styled';
 
 export default function Header() {
    return (

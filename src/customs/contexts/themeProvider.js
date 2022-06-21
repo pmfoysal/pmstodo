@@ -1,11 +1,11 @@
 import themes from '@themes/themes';
 import detectTheme from '@utilities/detectTheme';
-import React, {createContext, useState, useEffect} from 'react';
-import {ThemeProvider as StyledTheme} from 'styled-components';
+import React, { createContext, useState, useEffect } from 'react';
+import { ThemeProvider as StyledTheme } from 'styled-components';
 
 export const ThemeContext = createContext();
 
-export default function ThemeProvider({children}) {
+export default function ThemeProvider({ children }) {
    const [theme, setTheme] = useState('white');
 
    useEffect(() => {
@@ -13,7 +13,7 @@ export default function ThemeProvider({children}) {
    }, [theme]);
 
    return (
-      <ThemeContext.Provider value={{theme, setTheme}}>
+      <ThemeContext.Provider value={{ theme, setTheme }}>
          <StyledTheme theme={themes[theme]}>{children}</StyledTheme>
       </ThemeContext.Provider>
    );

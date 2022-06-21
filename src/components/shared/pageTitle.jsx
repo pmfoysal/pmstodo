@@ -1,6 +1,6 @@
 import React from 'react';
-import {PageTitleContainer} from './pageTitle.styled';
+import { PageTitleContainer } from './pageTitle.styled';
 
-export default function PageTitle({children}) {
+export default function PageTitle({ children }) {
    return <PageTitleContainer>{children}</PageTitleContainer>;
 }

@@ -1,16 +1,25 @@
-import React from 'react';
 import Todo from '@partials/todo';
-import PageContainer from '@shared/pageContainer';
+import React, { Fragment } from 'react';
 import PageTitle from '@shared/pageTitle';
 
 export default function Today() {
    return (
-      <PageContainer>
+      <Fragment>
          <PageTitle>today's todos</PageTitle>
          <Todo />
          <Todo />
          <Todo />
          <Todo />
-      </PageContainer>
+         <Todo />
+         <Todo />
+         <Todo />
+         <Todo />
+         <Todo />
+         <Todo />
+         <Todo />
+         <Todo />
+         <Todo />
+         <Todo />
+      </Fragment>
    );
 }

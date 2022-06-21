@@ -1,10 +1,9 @@
-import React from 'react';
-import PageContainer from '@shared/pageContainer';
+import React, { Fragment } from 'react';
 
 export default function Overdue() {
    return (
-      <PageContainer>
+      <Fragment>
          <div>Overdue Page</div>
-      </PageContainer>
+      </Fragment>
    );
 }

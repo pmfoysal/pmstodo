@@ -1,11 +1,10 @@
-import styled, {css} from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const TodoContainer = styled.summary`
    width: 100%;
    padding: 1.5rem;
    border-radius: 0.75rem;
-   background-color: ${({theme}) => theme.back.sub};
-   margin: 0.75rem 0;
+   background-color: ${({ theme }) => theme.back.sub};
    display: flex;
    align-items: center;
    gap: 1rem;
@@ -21,7 +20,7 @@ export const TodoCheck = styled.span`
    display: flex;
    align-items: center;
    justify-content: center;
-   ${({active}) => setCheckColor(active)};
+   ${({ active }) => setCheckColor(active)};
 `;
 
 export const TodoTexts = styled.div`
@@ -35,7 +34,7 @@ export const TodoTexts = styled.div`
 
 export const TodoTitle = styled.h1`
    font-weight: 550;
-   color: ${({theme}) => theme.text.main.head};
+   color: ${({ theme }) => theme.text.main.head};
    text-transform: unset;
    width: 100%;
    white-space: nowrap;
@@ -52,19 +51,19 @@ export const TodoTags = styled.p`
    &,
    * {
       font-size: 1.1rem;
-      color: ${({theme}) => theme.text.main.para};
+      color: ${({ theme }) => theme.text.main.para};
       line-height: 1;
       text-transform: capitalize;
    }
 
    & {
       text-transform: lowercase;
-      color: ${({theme}) => theme.text.main.head};
+      color: ${({ theme }) => theme.text.main.head};
    }
 `;
 
 export const TodoStatus = styled.span`
-   ${({status}) => setStatusColor(status)}
+   ${({ status }) => setStatusColor(status)}
 `;
 
 export const TodoTag = styled.span`
@@ -82,7 +81,7 @@ function setCheckColor(active) {
          background-color: #2aab2a;
 
          svg {
-            color: ${({theme}) => theme.text.sub.head};
+            color: ${({ theme }) => theme.text.sub.head};
          }
       `;
    } else {

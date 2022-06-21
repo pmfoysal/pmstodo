@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const SideNavContainer = styled.aside`
    padding: 2.5rem;
    border-radius: 1.5rem;
-   background-color: ${({theme}) => theme.back.page};
+   background-color: ${({ theme }) => theme.back.page};
    display: flex;
    flex-direction: column;
    gap: 0.5rem;
@@ -13,7 +13,7 @@ export const SideNavContainer = styled.aside`
 
 export const SideNavTitle = styled.h3`
    font-size: 1.8rem;
-   color: ${({theme}) => theme.text.main.head};
+   color: ${({ theme }) => theme.text.main.head};
    font-weight: 700;
    margin-bottom: 0.5rem;
    text-transform: capitalize;

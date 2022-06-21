@@ -1,14 +1,14 @@
-import {css, createGlobalStyle} from 'styled-components';
+import { css, createGlobalStyle } from 'styled-components';
 
 function globalStyle() {
    return css`
       body {
-         background-color: ${({theme}) => theme.back.sub};
+         background-color: ${({ theme }) => theme.back.sub};
       }
 
       *::selection {
-         background-color: ${({theme}) => theme.back.accent};
-         color: ${({theme}) => theme.text.main.head};
+         background-color: ${({ theme }) => theme.back.accent};
+         color: ${({ theme }) => theme.text.main.head};
       }
 
       *::-webkit-scrollbar {
@@ -20,16 +20,16 @@ function globalStyle() {
       }
 
       *::-webkit-scrollbar-thumb {
-         background-color: ${({theme}) => theme.back.accent};
+         background-color: ${({ theme }) => theme.back.accent};
          border-radius: 1rem;
       }
 
       *::-webkit-scrollbar-track {
-         background-color: ${({theme}) => theme.back.card1};
+         background-color: ${({ theme }) => theme.back.card1};
       }
 
       a {
-         color: ${({theme}) => theme.back.accent};
+         color: ${({ theme }) => theme.back.accent};
 
          &:hover {
             opacity: 0.85;

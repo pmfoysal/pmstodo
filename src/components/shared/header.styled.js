@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const HeaderContainer = styled.header`
    padding: 2rem 0;
    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1);
-   background-color: ${({theme}) => theme.back.page};
+   background-color: ${({ theme }) => theme.back.page};
 
    & > main {
       display: flex;

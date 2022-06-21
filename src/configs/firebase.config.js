@@ -1,5 +1,5 @@
-import {getAuth} from 'firebase/auth';
-import {initializeApp} from 'firebase/app';
+import { getAuth } from 'firebase/auth';
+import { initializeApp } from 'firebase/app';
 
 const firebaseConfig = {
    appId: process.env.REACT_APP_APPID,

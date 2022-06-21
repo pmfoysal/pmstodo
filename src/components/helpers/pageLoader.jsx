@@ -1,7 +1,7 @@
 import React from 'react';
-import {useTheme} from 'styled-components';
-import {RotatingLines} from 'react-loader-spinner';
-import {PageLoaderContainer} from './pageLoader.styled';
+import { useTheme } from 'styled-components';
+import { RotatingLines } from 'react-loader-spinner';
+import { PageLoaderContainer } from './pageLoader.styled';
 
 export default function PageLoader() {
    const theme = useTheme();

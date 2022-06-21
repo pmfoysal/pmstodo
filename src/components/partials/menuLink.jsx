@@ -1,11 +1,11 @@
 import React from 'react';
-import {Icon} from '@iconify/react';
-import {MenuLinkContainer} from './menuLink.styled';
-import {useLocation, useNavigate} from 'react-router-dom';
+import { Icon } from '@iconify/react';
+import { MenuLinkContainer } from './menuLink.styled';
+import { useLocation, useNavigate } from 'react-router-dom';
 
-export default function MenuLink({name, link = '', icon = ''}) {
+export default function MenuLink({ name, link = '', icon = '' }) {
    const navigate = useNavigate();
-   const {pathname} = useLocation();
+   const { pathname } = useLocation();
 
    function clickHandler() {
       if (link) {

@@ -1,6 +1,6 @@
 import React from 'react';
 import MenuLink from '@partials/menuLink';
-import {SideNavContainer, SideNavTitle} from './sideNav.styled';
+import { SideNavContainer, SideNavTitle } from './sideNav.styled';
 
 export default function SideNav() {
    return (

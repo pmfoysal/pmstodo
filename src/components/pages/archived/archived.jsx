@@ -1,10 +1,9 @@
-import React from 'react';
-import PageContainer from '@shared/pageContainer';
+import React, { Fragment } from 'react';
 
 export default function Archived() {
    return (
-      <PageContainer>
+      <Fragment>
          <div>Archived Page</div>
-      </PageContainer>
+      </Fragment>
    );
 }

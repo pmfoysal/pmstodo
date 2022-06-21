@@ -1,10 +1,9 @@
-import React from 'react';
-import PageContainer from '@shared/pageContainer';
+import React, { Fragment } from 'react';
 
 export default function Home() {
    return (
-      <PageContainer>
+      <Fragment>
          <div>Home Page</div>
-      </PageContainer>
+      </Fragment>
    );
 }

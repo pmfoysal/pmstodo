@@ -1,8 +1,9 @@
 import React from 'react';
-import {TodoCheck, TodoContainer, TodoDate, TodoStatus, TodoTag, TodoTags, TodoTexts, TodoTitle} from './todo.styled';
-import {useNavigate} from 'react-router-dom';
-import {useState} from 'react';
-import {Icon} from '@iconify/react';
+import { useState } from 'react';
+import { Icon } from '@iconify/react';
+import { useNavigate } from 'react-router-dom';
+import { TodoTag, TodoTags, TodoTexts, TodoTitle } from './todo.styled';
+import { TodoCheck, TodoContainer, TodoDate, TodoStatus } from './todo.styled';
 
 export default function Todo() {
    const navigate = useNavigate();

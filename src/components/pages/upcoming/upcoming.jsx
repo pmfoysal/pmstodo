@@ -1,10 +1,9 @@
-import React from 'react';
-import PageContainer from '@shared/pageContainer';
+import React, { Fragment } from 'react';
 
 export default function Upcoming() {
    return (
-      <PageContainer>
+      <Fragment>
          <div>Upcoming Page</div>
-      </PageContainer>
+      </Fragment>
    );
 }

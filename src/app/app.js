@@ -1,9 +1,9 @@
 import Toaster from '@helpers/toaster';
 import SiteLoader from '@helpers/siteLoader';
-import {Route, Routes} from 'react-router-dom';
-import React, {Suspense, Fragment, lazy} from 'react';
-import {Archived, Home, Office, Overdue} from '@pages';
-import {Personal, Today, Travel, Upcoming} from '@pages';
+import { Route, Routes } from 'react-router-dom';
+import React, { Suspense, Fragment, lazy } from 'react';
+import { Archived, Home, Office, Overdue } from '@pages';
+import { Personal, Today, Travel, Upcoming } from '@pages';
 const Layout = lazy(() => import('@layouts/layout'));
 
 export default function App() {

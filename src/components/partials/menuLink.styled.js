@@ -6,7 +6,7 @@ export const MenuLinkContainer = styled.button`
    text-transform: capitalize;
    font-weight: 550;
    font-size: 1.5rem;
-   color: ${({theme}) => theme.text.main.para};
+   color: ${({ theme }) => theme.text.main.para};
    transition: 0.1s ease;
    display: flex;
    align-items: center;
@@ -22,12 +22,12 @@ export const MenuLinkContainer = styled.button`
 
    &:hover,
    &.active {
-      background-color: ${({theme}) => theme.back.sub};
-      color: ${({theme}) => theme.text.main.head};
+      background-color: ${({ theme }) => theme.back.sub};
+      color: ${({ theme }) => theme.text.main.head};
    }
 
    &.active {
-      border-color: ${({theme}) => theme.back.accent};
+      border-color: ${({ theme }) => theme.back.accent};
    }
 
    &:active {
