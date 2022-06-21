@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const SideNavContainer = styled.aside`
-   padding: 2rem;
+   padding: 2.5rem;
    border-radius: 1.5rem;
    background-color: ${({theme}) => theme.back.page};
    display: flex;

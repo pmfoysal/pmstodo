@@ -1,10 +1,10 @@
 import React from 'react';
 import PageContainer from '@shared/pageContainer';
 
-export default function Home() {
+export default function Today() {
    return (
       <PageContainer>
-         <div>Home Page</div>
+         <div>Today Page</div>
       </PageContainer>
    );
 }

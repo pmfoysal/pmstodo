@@ -7,9 +7,9 @@ export default function SideNav() {
       <SideNavContainer>
          <SideNavTitle>todos by day</SideNavTitle>
          <MenuLink name='today' link='/' icon='fluent:calendar-today-24-regular' />
-         <MenuLink name='tomorrow' link='/tomorrow' icon='fluent:calendar-sync-24-regular' />
+         <MenuLink name='upcoming' link='/upcoming' icon='fluent:calendar-sync-24-regular' />
          <MenuLink name='overdue' link='/overdue' icon='fluent:calendar-cancel-24-regular' />
-         <MenuLink name='all todos' link='/all' icon='fluent:calendar-star-24-regular' />
+         <MenuLink name='archived' link='/archived' icon='fluent:calendar-star-24-regular' />
          <br />
          <SideNavTitle>todos by tag</SideNavTitle>
          <MenuLink name='personal' link='/personal' icon='fluent:notepad-person-24-regular' />

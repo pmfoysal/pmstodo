@@ -1,10 +1,10 @@
 import React from 'react';
 import PageContainer from '@shared/pageContainer';
 
-export default function Home() {
+export default function Travel() {
    return (
       <PageContainer>
-         <div>Home Page</div>
+         <div>Travel Page</div>
       </PageContainer>
    );
 }
