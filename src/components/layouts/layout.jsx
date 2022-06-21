@@ -1,10 +1,10 @@
 import Header from '@shared/header';
 import SideNav from '@shared/sideNav';
+import React, {Fragment} from 'react';
 import {Outlet} from 'react-router-dom';
-import PageLoader from '@helpers/pageLoader';
-import React, {Fragment, Suspense} from 'react';
 import MainContainer from '@shared/mainContainer';
-import {LayoutContainer, LayoutLeftSide, LayoutRightSide} from './layout.styled';
+import Details from 'components/pages/details/details';
+import {LayoutContainer, LayoutLeftSide, LayoutRightLine, LayoutRightParts, LayoutRightSide} from './layout.styled';
 
 export default function Layout() {
    return (
@@ -16,9 +16,12 @@ export default function Layout() {
                   <SideNav />
                </LayoutLeftSide>
                <LayoutRightSide>
-                  <Suspense fallback={<PageLoader />}>
+                  <LayoutRightParts>
                      <Outlet />
-                  </Suspense>
+                  </LayoutRightParts>
+                  <LayoutRightParts>
+                     <Details />
+                  </LayoutRightParts>
                </LayoutRightSide>
             </MainContainer>
          </LayoutContainer>
