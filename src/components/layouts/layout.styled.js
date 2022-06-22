@@ -23,6 +23,7 @@ export const LayoutRightSide = styled.article`
    display: grid;
    grid-template-columns: 4fr 3fr;
    padding: 2.5rem;
+   gap: 3rem;
 `;
 
 export const LayoutRightParts = styled.aside`

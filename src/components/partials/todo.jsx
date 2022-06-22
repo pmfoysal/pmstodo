@@ -1,23 +1,26 @@
 import React from 'react';
-import { useState } from 'react';
 import { Icon } from '@iconify/react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { TodoTag, TodoTags, TodoTexts, TodoTitle } from './todo.styled';
 import { TodoCheck, TodoContainer, TodoDate, TodoStatus } from './todo.styled';
 
 export default function Todo() {
    const navigate = useNavigate();
-   const [done, setDone] = useState(true);
+   const [query] = useSearchParams();
    const status = 'completed';
    const tag = 'personal';
    const date = 'today';
+   const view = query.get('view');
+   const done = status === 'completed';
 
    function clickHandler() {
-      navigate('?view=2314943');
+      if (view !== '2314943') {
+         navigate('?view=2314943');
+      }
    }
 
    return (
-      <TodoContainer>
+      <TodoContainer className={view === '2314943'}>
          <TodoCheck active={done}>{done && <Icon icon='entypo:check' />}</TodoCheck>
          <TodoTexts>
             <TodoTitle onClick={clickHandler}>

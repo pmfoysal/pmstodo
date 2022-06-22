@@ -2,12 +2,18 @@ import styled, { css } from 'styled-components';
 
 export const TodoContainer = styled.summary`
    width: 100%;
-   padding: 1.5rem;
+   padding: 1.5rem 1.25rem;
    border-radius: 0.75rem;
    background-color: ${({ theme }) => theme.back.sub};
    display: flex;
    align-items: center;
    gap: 1rem;
+   border-left: 0.4rem solid transparent;
+   border-right: 0.4rem solid transparent;
+
+   &.true {
+      border-color: ${({ theme }) => theme.back.accent};
+   }
 `;
 
 export const TodoCheck = styled.span`
