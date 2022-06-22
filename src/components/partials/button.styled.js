@@ -33,11 +33,6 @@ function setColors(theme, main) {
       return css`
          background-color: ${theme.back.accent};
          color: ${theme.text.main.head};
-
-         &:hover {
-            background-color: transparent;
-            color: ${theme.back.accent};
-         }
       `;
    } else {
       return css`

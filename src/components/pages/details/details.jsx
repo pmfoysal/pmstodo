@@ -1,11 +1,22 @@
 import React from 'react';
 import PageTitle from '@shared/pageTitle';
 import { DetailsContainer, DetailsContent, DetailsInfo } from './details.styled';
+import { Icon } from '@iconify/react';
 
 export default function Details() {
    return (
       <DetailsContainer>
-         <PageTitle>task info</PageTitle>
+         <PageTitle>
+            task info{' '}
+            <span className='buttons'>
+               <button>
+                  <Icon icon='fluent:clipboard-text-edit-24-regular' />
+               </button>
+               <button className='red'>
+                  <Icon icon='fluent:delete-24-regular' />
+               </button>
+            </span>
+         </PageTitle>
          <DetailsContent>
             <DetailsInfo>
                author: <span>foysal ahmmed</span>

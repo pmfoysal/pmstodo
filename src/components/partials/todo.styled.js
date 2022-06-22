@@ -4,15 +4,48 @@ export const TodoContainer = styled.summary`
    width: 100%;
    padding: 1.5rem 1.25rem;
    border-radius: 0.75rem;
-   background-color: ${({ theme }) => theme.back.sub};
    display: flex;
    align-items: center;
    gap: 1rem;
    border-left: 0.4rem solid transparent;
    border-right: 0.4rem solid transparent;
+   background-color: ${({ theme }) => theme.back.sub};
 
    &.true {
       border-color: ${({ theme }) => theme.back.accent};
+   }
+
+   &:hover {
+      button {
+         display: flex;
+      }
+   }
+`;
+
+export const TodoButton = styled.button`
+   height: 3.5rem;
+   width: 3.5rem;
+   border-radius: 100%;
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   z-index: 5;
+   right: 2rem;
+   background-color: #f9d5d5;
+   color: #dd0000;
+   display: none;
+   align-items: center;
+   justify-content: center;
+
+   svg {
+      color: inherit;
+      height: 1.8rem;
+      width: auto;
+      pointer-events: none;
+   }
+
+   &:active {
+      transform: scale(0.975) translateY(-50%);
    }
 `;
 

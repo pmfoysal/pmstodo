@@ -47,4 +47,9 @@ export const ConfirmButtons = styled.div`
    justify-content: flex-end;
    gap: 2rem;
    padding: 1rem 2rem 2rem;
+
+   button {
+      height: 4rem;
+      font-size: 1.4rem;
+   }
 `;
