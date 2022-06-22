@@ -7,7 +7,7 @@ export const BackdropContainer = styled.section`
    width: 100%;
    z-index: 100;
    overflow: hidden;
-   background-color: rgba(0, 0, 0, 0.4);
+   background-color: rgba(0, 0, 0, 0.5);
 
    & > * {
       height: 100vh;

@@ -2,8 +2,11 @@ import React from 'react';
 import PageTitle from '@shared/pageTitle';
 import { DetailsContainer, DetailsContent, DetailsInfo } from './details.styled';
 import { Icon } from '@iconify/react';
+import { useSearchParams } from 'react-router-dom';
 
 export default function Details() {
+   const [query] = useSearchParams();
+   const view = query.get('view');
    return (
       <DetailsContainer>
          <PageTitle>

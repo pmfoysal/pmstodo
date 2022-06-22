@@ -8,7 +8,7 @@ export const ButtonContainer = styled.button`
    font-weight: 550;
    font-size: 1.5rem;
    border-radius: 0.75rem;
-   border: 0.2rem solid ${({ theme }) => theme.back.accent};
+   border: 0.1rem solid ${({ theme }) => theme.back.accent};
    user-select: none;
    transition: 0.1s ease;
    height: 4.2rem;

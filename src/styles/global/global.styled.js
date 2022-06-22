@@ -11,6 +11,10 @@ function globalStyle() {
          color: ${({ theme }) => theme.text.main.head};
       }
 
+      *::placeholder {
+         color: rgba(0, 0, 0, 0.5);
+      }
+
       *::-webkit-scrollbar {
          width: 0rem;
 
