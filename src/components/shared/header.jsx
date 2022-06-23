@@ -8,7 +8,7 @@ import AddTodo from 'components/pages/addTodo/addTodo';
 import { HeaderContainer, HeaderRightSide } from './header.styled';
 
 export default function Header() {
-   const [popup, setPopup] = useState(true);
+   const [popup, setPopup] = useState(false);
 
    function clickHandler() {
       setPopup(true);
