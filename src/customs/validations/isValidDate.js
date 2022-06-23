@@ -8,9 +8,8 @@ export default function isValidDate(date) {
       const today = new Date().toLocaleDateString('en-US', { dateStyle: 'long' });
       const todayMili = new Date(today);
       const dateMili = new Date(date);
-      if (dateMili >= todayMili) {
-         return true;
-      } else {
+      if (dateMili >= todayMili) return true;
+      else {
          toast.error('Please select an upcoming date!');
          return false;
       }
