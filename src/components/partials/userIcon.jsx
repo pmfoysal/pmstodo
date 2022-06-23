@@ -1,7 +1,8 @@
-import { Icon } from '@iconify/react';
 import avatar from '@icons/user.svg';
-import React, { useState } from 'react';
-// import userSignout from 'customs/auth/userSignout';
+import { Icon } from '@iconify/react';
+import { toast } from 'react-toastify';
+import React, { useState, useContext } from 'react';
+import { StoreContext } from '@contexts/storeProvider';
 import {
    UserIconContainer,
    UserIconImage,
@@ -12,22 +13,29 @@ import {
    UserWindowRole,
 } from './userIcon.styled';
 
-export default function UserIcon({ user }) {
+export default function UserIcon() {
    const [active, setActive] = useState(false);
+   const { user, setUser } = useContext(StoreContext);
 
    function clickHandler() {
       setActive(current => !current);
    }
 
+   function signOutHandler() {
+      window.localStorage.removeItem('userToken');
+      setUser({});
+      toast.warning('Warning! You have signed out.');
+   }
+
    return (
       <UserIconContainer>
-         <UserIconImage src={user?.photoURL || avatar} alt='user' onClick={clickHandler} />
+         <UserIconImage src={user?.image || avatar} alt='user' onClick={clickHandler} />
          {active && (
             <UserIconWindow>
-               <UserWindowImage src={user?.photoURL || avatar} alt='user' />
-               <UserWindowName>{user?.displayName || 'unknown'}</UserWindowName>
-               <UserWindowRole>user</UserWindowRole>
-               <UserWindowButton onClick={() => {}}>
+               <UserWindowImage src={user?.image || avatar} alt='user' />
+               <UserWindowName>{user?.name || 'unknown'}</UserWindowName>
+               <UserWindowRole>{user?.isAdmin ? 'admin' : 'user'}</UserWindowRole>
+               <UserWindowButton onClick={signOutHandler}>
                   <Icon icon='fa:sign-out' />
                   signout
                </UserWindowButton>

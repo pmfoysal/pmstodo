@@ -41,6 +41,23 @@ function globalStyle() {
             opacity: 0.85;
          }
       }
+
+      .Toastify__toast {
+         box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.05);
+         border-radius: 0.75rem;
+
+         &,
+         * {
+            font-family: inherit;
+            line-height: 1.4;
+            text-transform: lowercase;
+            user-select: none;
+
+            &::first-letter {
+               text-transform: capitalize;
+            }
+         }
+      }
    `;
 }
 
