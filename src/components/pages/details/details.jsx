@@ -16,11 +16,9 @@ export default function Details() {
             task info
             {view && (
                <span className='buttons'>
-                  {!user?.isAdmin && (
-                     <button>
-                        <Icon icon='fluent:clipboard-text-edit-24-regular' />
-                     </button>
-                  )}
+                  <button>
+                     <Icon icon='fluent:clipboard-text-edit-24-regular' />
+                  </button>
                   <button className='red'>
                      <Icon icon='fluent:delete-24-regular' />
                   </button>

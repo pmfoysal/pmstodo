@@ -9,5 +9,15 @@ export default function Input(props) {
       if (handler) handler(event.target.value);
    }
 
-   return <InputContainer type={type} name={name} placeholder={holder} required value={value} onChange={changeHandler} />;
+   return (
+      <InputContainer
+         type={type}
+         name={name}
+         placeholder={holder}
+         required
+         value={value}
+         onChange={changeHandler}
+         spellCheck='false'
+      />
+   );
 }
