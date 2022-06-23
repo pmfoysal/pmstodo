@@ -16,10 +16,12 @@ function globalStyle() {
       }
 
       *::-webkit-scrollbar {
-         width: 0rem;
+         width: 0;
+         height: 0;
 
          @media screen and (max-width: 600px) {
             width: 0;
+            height: 0;
          }
       }
 

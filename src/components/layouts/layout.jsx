@@ -5,14 +5,12 @@ import { Outlet } from 'react-router-dom';
 import MainContainer from '@shared/mainContainer';
 import Details from 'components/pages/details/details';
 import { LayoutContainer, LayoutLeftSide, LayoutRightParts, LayoutRightSide } from './layout.styled';
-import { AuthError } from '@pages';
 
 export default function Layout() {
    return (
       <Fragment>
          <Header />
-         <AuthError />
-         {/* <LayoutContainer>
+         <LayoutContainer>
             <MainContainer>
                <LayoutLeftSide>
                   <SideNav />
@@ -26,7 +24,7 @@ export default function Layout() {
                   </LayoutRightParts>
                </LayoutRightSide>
             </MainContainer>
-         </LayoutContainer> */}
+         </LayoutContainer>
       </Fragment>
    );
 }

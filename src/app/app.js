@@ -2,7 +2,7 @@ import Toaster from '@helpers/toaster';
 import SiteLoader from '@helpers/siteLoader';
 import { Route, Routes } from 'react-router-dom';
 import React, { Suspense, Fragment, lazy } from 'react';
-import { Archived, Home, Office, Overdue } from '@pages';
+import { Archived, AuthError, AuthPage, Home, Office, Overdue } from '@pages';
 import { Personal, Today, Travel, Upcoming } from '@pages';
 const Layout = lazy(() => import('@layouts/layout'));
 
@@ -10,7 +10,8 @@ export default function App() {
    return (
       <Fragment>
          <Suspense fallback={<SiteLoader />}>
-            <Routes>
+            <AuthPage />
+            {/* <Routes>
                <Route path='*' element={<Layout />}>
                   <Route index element={<Today />} />
                   <Route path='home' element={<Home />} />
@@ -22,7 +23,7 @@ export default function App() {
                   <Route path='upcoming' element={<Upcoming />} />
                   <Route path='*' element={<h1>Opps! Page Not Found</h1>} />
                </Route>
-            </Routes>
+            </Routes> */}
          </Suspense>
          <Toaster />
       </Fragment>

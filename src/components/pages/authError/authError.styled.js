@@ -1,12 +1,14 @@
 import styled from 'styled-components';
 
 export const AuthErrorContainer = styled.section`
-   padding: 6rem 0;
-   height: calc(100vh - 8.9rem);
+   padding: 8rem 1.5rem;
+   height: 100vh;
 
    & > * {
       height: 100%;
       display: flex;
+      flex-direction: column;
+      gap: 5rem;
       align-items: center;
       justify-content: center;
       border-radius: 1.5rem;
