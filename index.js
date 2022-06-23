@@ -75,6 +75,12 @@ async function runDatabase() {
          const data = await dbTodos.find({ email }).toArray();
          res.send(data.reverse());
       });
+      // [===>>>) Database Collection Starts Here (<<<===] //
+      app.get('/todo/:id', verifyUser, async (req, res) => {
+         const filter = { _id: ObjectId(req?.params?.id) };
+         const data = await dbTodos.findOne(filter);
+         res.send(data);
+      });
    } finally {
       // await client.close();
    }
