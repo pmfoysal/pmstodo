@@ -64,6 +64,11 @@ async function runDatabase() {
             res.send({ user: { ...decoded } });
          });
       });
+      // [===>>>) Database Collection Starts Here (<<<===] //
+      app.get('/todos/all', verifyUser, verifyAdmin, async (req, res) => {
+         const data = await dbTodos.find({}).toArray();
+         res.send(data.reverse());
+      });
    } finally {
       // await client.close();
    }
