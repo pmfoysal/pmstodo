@@ -5,7 +5,6 @@ import Input from '@partials/input';
 import Button from '@partials/button';
 import addTodo from '@servers/addTodo';
 import Backdrop from '@helpers/backdrop';
-import getModDate from '@utilities/getModDate';
 import isValidDate from '@validations/isValidDate';
 import isValidTask from '@validations/isValidTask';
 import { StoreContext } from '@contexts/storeProvider';
@@ -30,9 +29,9 @@ export default function AddTodo({ closer }) {
          task,
          isDone: false,
          dates: {
-            add: getModDate(new Date()),
-            due: getModDate(date),
-            done: '',
+            add: new Date().getTime() / 1000,
+            due: new Date(date).getTime() / 1000,
+            done: 0,
          },
       };
    }
