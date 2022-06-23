@@ -44,6 +44,12 @@ async function runDatabase() {
       await dbClient.connect();
       // [===>>>) Database Collection Starts Here (<<<===] //
       const dbTodos = dbClient.db('todo-220625').collection('todos');
+      // [===>>>) Database Collection Starts Here (<<<===] //
+      app.post('/token', async (req, res) => {
+         const user = req?.body;
+         const token = jwt.sign(user, process.env.ACCESS_TOKEN, { expiresIn: '10d' });
+         res.send({ token });
+      });
    } finally {
       // await client.close();
    }
