@@ -2,6 +2,7 @@ require('dotenv').config();
 const cors = require('cors');
 const express = require('express');
 const jwt = require('jsonwebtoken');
+const getTodayDate = require('./utilities/getTodayDate');
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 
 const app = express();
@@ -77,6 +78,13 @@ async function runDatabase() {
       app.get('/todos', verifyUser, async (req, res) => {
          const email = req?.user?.email;
          const data = await dbTodos.find({ email }).toArray();
+         res.send(data.reverse());
+      });
+
+      app.get('/todos/today', verifyUser, async (req, res) => {
+         const email = req?.user?.email;
+         const date = { due: getTodayDate() };
+         const data = await dbTodos.find({ email, date }).toArray();
          res.send(data.reverse());
       });
 
