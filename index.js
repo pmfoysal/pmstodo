@@ -86,6 +86,14 @@ async function runDatabase() {
          const result = await dbTodos.insertOne(req?.body);
          res.send(result);
       });
+      // [===>>>) Database Collection Starts Here (<<<===] //
+      app.put('/todo/:id', verifyUser, async (req, res) => {
+         const options = { upsert: true };
+         const data = { $set: req?.body };
+         const filter = { _id: ObjectId(req?.params?.id) };
+         const result = await dbTodos.updateOne(filter, data, options);
+         res.send(result);
+      });
    } finally {
       // await client.close();
    }
