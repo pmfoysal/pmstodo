@@ -20,4 +20,4 @@ pmApp.render(
 );
 
 reportWebVitals();
-serviceWorkerRegistration.register();
+serviceWorkerRegistration.unregister();

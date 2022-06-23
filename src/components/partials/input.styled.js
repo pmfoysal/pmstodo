@@ -9,7 +9,7 @@ export const InputContainer = styled.input`
    padding: 0 1.5rem;
    line-height: 1.4;
    width: 100%;
-   height: 4.2rem;
+   height: 4.5rem;
    transition: 0.1s ease;
 
    &:focus {

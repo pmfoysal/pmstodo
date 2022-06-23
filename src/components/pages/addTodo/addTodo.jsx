@@ -7,10 +7,13 @@ import Input from '@partials/input';
 
 export default function AddTodo({ closer }) {
    const [tag, setTag] = useState('personal');
+   const [date, setDate] = useState('');
 
    function closeHandler() {
       if (closer) closer(false);
    }
+
+   console.log(date);
 
    return (
       <Backdrop>
@@ -19,7 +22,7 @@ export default function AddTodo({ closer }) {
             <AddTodoLabel>What task do you want to do?</AddTodoLabel>
             <Input holder='Task description in detailed' />
             <AddTodoLabel>When do you complete the task?</AddTodoLabel>
-            <Input type='date' />
+            <Input type='date' handler={setDate} />
             <AddTodoLabel>What is your task category?</AddTodoLabel>
             <AddTodoTags>
                <AddTodoTag onClick={() => setTag('personal')} className={tag === 'personal'}>

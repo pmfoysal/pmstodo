@@ -2,7 +2,7 @@ import { toast } from 'react-toastify';
 import pmaxios from '@middlewares/pmaxios';
 
 export default function getUser(setUser, setDisable) {
-   const tId = toast.loading('Please wait... Verifying Your Access Token.');
+   const tId = toast.loading('Please wait! Verifying Your Access Token...');
    pmaxios
       .get('/user')
       .then(res => {
