@@ -83,135 +83,119 @@ async function runDatabase() {
 
       app.get('/todos/today', verifyUser, async (req, res) => {
          const filter = {
-            $query: {
-               email: req?.user?.email,
-               date: {
-                  due: getTodayTime(),
-               },
-            },
-            $orderby: {
-               date: {
-                  add: -1,
-               },
+            email: req?.user?.email,
+            dates: {
+               due: getTodayTime(),
             },
          };
-         const data = await dbTodos.find(filter).toArray();
+         const order = {
+            dates: {
+               add: -1,
+            },
+         };
+         const data = await dbTodos.find(filter).sort(order).toArray();
          res.send(data);
       });
 
       app.get('/todos/upcoming', verifyUser, async (req, res) => {
          const filter = {
-            $query: {
-               email: req?.user?.email,
-               date: {
-                  due: { $gt: getTodayTime() },
-               },
-            },
-            $orderby: {
-               date: {
-                  due: 1,
-               },
+            email: req?.user?.email,
+            dates: {
+               due: { $gt: getTodayTime() },
             },
          };
-         const data = await dbTodos.find(filter).toArray();
+         const order = {
+            dates: {
+               due: 1,
+            },
+         };
+         const data = await dbTodos.find(filter).sort(order).toArray();
          res.send(data);
       });
 
       app.get('/todos/overdue', verifyUser, async (req, res) => {
          const filter = {
-            $query: {
-               email: req?.user?.email,
-               date: {
-                  due: { $lt: getTodayTime() },
-               },
-            },
-            $orderby: {
-               date: {
-                  due: 1,
-               },
+            email: req?.user?.email,
+            dates: {
+               due: { $lt: getTodayTime() },
             },
          };
-         const data = await dbTodos.find(filter).toArray();
+         const order = {
+            dates: {
+               due: 1,
+            },
+         };
+         const data = await dbTodos.find(filter).sort(order).toArray();
          res.send(data);
       });
 
       app.get('/todos/archived', verifyUser, async (req, res) => {
          const filter = {
-            $query: {
-               email: req?.user?.email,
-               isDone: true,
-            },
-            $orderby: {
-               date: {
-                  done: -1,
-               },
+            email: req?.user?.email,
+            isDone: true,
+         };
+         const order = {
+            dates: {
+               done: -1,
             },
          };
-         const data = await dbTodos.find(filter).toArray();
+         const data = await dbTodos.find(filter).sort(order).toArray();
          res.send(data);
       });
 
       app.get('/todos/personal', verifyUser, async (req, res) => {
          const filter = {
-            $query: {
-               email: req?.user?.email,
-               tag: 'personal',
-            },
-            $orderby: {
-               date: {
-                  due: 1,
-               },
+            email: req?.user?.email,
+            tag: 'personal',
+         };
+         const order = {
+            dates: {
+               due: 1,
             },
          };
-         const data = await dbTodos.find(filter).toArray();
+         const data = await dbTodos.find(filter).sort(order).toArray();
          res.send(data);
       });
 
       app.get('/todos/office', verifyUser, async (req, res) => {
          const filter = {
-            $query: {
-               email: req?.user?.email,
-               tag: 'office',
-            },
-            $orderby: {
-               date: {
-                  due: 1,
-               },
+            email: req?.user?.email,
+            tag: 'office',
+         };
+         const order = {
+            dates: {
+               due: 1,
             },
          };
-         const data = await dbTodos.find(filter).toArray();
+         const data = await dbTodos.find(filter).sort(order).toArray();
          res.send(data);
       });
 
       app.get('/todos/home', verifyUser, async (req, res) => {
          const filter = {
-            $query: {
-               email: req?.user?.email,
-               tag: 'home',
-            },
-            $orderby: {
-               date: {
-                  due: 1,
-               },
+            email: req?.user?.email,
+            tag: 'home',
+         };
+         const order = {
+            dates: {
+               due: 1,
             },
          };
-         const data = await dbTodos.find(filter).toArray();
+         const data = await dbTodos.find(filter).sort(order).toArray();
          res.send(data);
       });
 
       app.get('/todos/travel', verifyUser, async (req, res) => {
          const filter = {
-            $query: {
-               email: req?.user?.email,
-               tag: 'travel',
-            },
-            $orderby: {
-               date: {
-                  due: 1,
-               },
+            email: req?.user?.email,
+            tag: 'travel',
+         };
+         const order = {
+            dates: {
+               due: 1,
             },
          };
-         const data = await dbTodos.find(filter).toArray();
+         const data = await dbTodos.find(filter).sort(order).toArray();
          res.send(data);
       });
 
