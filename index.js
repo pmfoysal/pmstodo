@@ -41,16 +41,18 @@ function verifyAdmin(req, res, nex) {
 
 async function runDatabase() {
    try {
+      // [===>>>) Database Collection Starts Here (<<<===] //
       await dbClient.connect();
-      // [===>>>) Database Collection Starts Here (<<<===] //
       const dbTodos = dbClient.db('todo-220625').collection('todos');
-      // [===>>>) Database Collection Starts Here (<<<===] //
+
+      // [===>>>) Token Generating API Starts Here (<<<===] //
       app.post('/token', async (req, res) => {
          const user = req?.body;
          const token = jwt.sign(user, process.env.ACCESS_TOKEN, { expiresIn: '10d' });
          res.send({ token });
       });
-      // [===>>>) Database Collection Starts Here (<<<===] //
+
+      // [===>>>) Getting User Details API Starts Here (<<<===] //
       app.get('/user', async (req, res) => {
          const auth = req?.headers?.authorization;
          const res1 = { status: 401, message: "You don't have Authorization to access this API!" };
@@ -65,29 +67,30 @@ async function runDatabase() {
             res.send({ user: { ...decoded, isAdmin } });
          });
       });
-      // [===>>>) Database Collection Starts Here (<<<===] //
+
+      // [===>>>) Todos Starts Here (<<<===] //
       app.get('/todos/all', verifyUser, verifyAdmin, async (req, res) => {
          const data = await dbTodos.find({}).toArray();
          res.send(data.reverse());
       });
-      // [===>>>) Database Collection Starts Here (<<<===] //
+
       app.get('/todos', verifyUser, async (req, res) => {
          const email = req?.user?.email;
          const data = await dbTodos.find({ email }).toArray();
          res.send(data.reverse());
       });
-      // [===>>>) Database Collection Starts Here (<<<===] //
+
       app.get('/todo/:id', verifyUser, async (req, res) => {
          const filter = { _id: ObjectId(req?.params?.id) };
          const data = await dbTodos.findOne(filter);
          res.send(data);
       });
-      // [===>>>) Database Collection Starts Here (<<<===] //
+
       app.post('/todo', verifyUser, async (req, res) => {
          const result = await dbTodos.insertOne(req?.body);
          res.send(result);
       });
-      // [===>>>) Database Collection Starts Here (<<<===] //
+
       app.put('/todo/:id', verifyUser, async (req, res) => {
          const options = { upsert: true };
          const data = { $set: req?.body };
@@ -95,7 +98,7 @@ async function runDatabase() {
          const result = await dbTodos.updateOne(filter, data, options);
          res.send(result);
       });
-      // [===>>>) Database Collection Starts Here (<<<===] //
+
       app.delete('/todo/:id', verifyUser, async (req, res) => {
          const filter = { _id: ObjectId(req?.params?.id) };
          const result = await dbTodos.deleteOne(filter);
