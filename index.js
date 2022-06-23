@@ -109,7 +109,7 @@ async function runDatabase() {
             },
             $orderby: {
                date: {
-                  add: -1,
+                  due: 1,
                },
             },
          };
@@ -127,7 +127,23 @@ async function runDatabase() {
             },
             $orderby: {
                date: {
-                  add: -1,
+                  due: 1,
+               },
+            },
+         };
+         const data = await dbTodos.find(filter).toArray();
+         res.send(data);
+      });
+
+      app.get('/todos/archived', verifyUser, async (req, res) => {
+         const filter = {
+            $query: {
+               email: req?.user?.email,
+               isDone: true,
+            },
+            $orderby: {
+               date: {
+                  done: -1,
                },
             },
          };
