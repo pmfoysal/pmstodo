@@ -1,4 +1,4 @@
-# ToolKits - Tools Management Website!
+# TodoApp - A Simple & Modern Todo Application!
 
 TodoApp - A Simple & Modern Todo Application Design & Developed by Foysal Ahmmed using ReactJS! Live: https://todo220625.netlify.app
 
