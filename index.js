@@ -81,6 +81,11 @@ async function runDatabase() {
          const data = await dbTodos.findOne(filter);
          res.send(data);
       });
+      // [===>>>) Database Collection Starts Here (<<<===] //
+      app.post('/todo', verifyUser, async (req, res) => {
+         const result = await dbTodos.insertOne(req?.body);
+         res.send(result);
+      });
    } finally {
       // await client.close();
    }
