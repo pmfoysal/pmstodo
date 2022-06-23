@@ -2,7 +2,7 @@ require('dotenv').config();
 const cors = require('cors');
 const express = require('express');
 const jwt = require('jsonwebtoken');
-const getTodayDate = require('./utilities/getTodayDate');
+const getTodayTime = require('./utilities/getTodayTime');
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 
 const app = express();
@@ -82,10 +82,39 @@ async function runDatabase() {
       });
 
       app.get('/todos/today', verifyUser, async (req, res) => {
-         const email = req?.user?.email;
-         const date = { due: getTodayDate() };
-         const data = await dbTodos.find({ email, date }).toArray();
-         res.send(data.reverse());
+         const filter = {
+            $query: {
+               email: req?.user?.email,
+               date: {
+                  due: getTodayTime(),
+               },
+            },
+            $orderby: {
+               date: {
+                  add: -1,
+               },
+            },
+         };
+         const data = await dbTodos.find(filter).toArray();
+         res.send(data);
+      });
+
+      app.get('/todos/upcoming', verifyUser, async (req, res) => {
+         const filter = {
+            $query: {
+               email: req?.user?.email,
+               date: {
+                  due: { $gt: getTodayTime() },
+               },
+            },
+            $orderby: {
+               date: {
+                  add: -1,
+               },
+            },
+         };
+         const data = await dbTodos.find(filter).toArray();
+         res.send(data);
       });
 
       app.get('/todo/:id', verifyUser, async (req, res) => {
