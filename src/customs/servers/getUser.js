@@ -15,7 +15,6 @@ export default function getUser(setUser, setDisable) {
          setUser(res?.data?.user);
       })
       .catch(error => {
-         setDisable(false);
          toast.update(tId, {
             render: "Failed! Your Access Token isn't Valid.",
             type: 'error',
@@ -23,5 +22,6 @@ export default function getUser(setUser, setDisable) {
             autoClose: 3000,
          });
          setUser({});
+         setDisable(false);
       });
 }
