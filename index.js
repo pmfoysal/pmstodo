@@ -61,7 +61,8 @@ async function runDatabase() {
 
          jwt.verify(token, process.env.ACCESS_TOKEN, (error, decoded) => {
             if (error) return res.status(403).send(res2);
-            res.send({ user: { ...decoded } });
+            const isAdmin = decoded?.email === process.env.ADMIN_EMAIL;
+            res.send({ user: { ...decoded, isAdmin } });
          });
       });
       // [===>>>) Database Collection Starts Here (<<<===] //
@@ -92,6 +93,12 @@ async function runDatabase() {
          const data = { $set: req?.body };
          const filter = { _id: ObjectId(req?.params?.id) };
          const result = await dbTodos.updateOne(filter, data, options);
+         res.send(result);
+      });
+      // [===>>>) Database Collection Starts Here (<<<===] //
+      app.delete('/todo/:id', verifyUser, async (req, res) => {
+         const filter = { _id: ObjectId(req?.params?.id) };
+         const result = await dbTodos.deleteOne(filter);
          res.send(result);
       });
    } finally {
