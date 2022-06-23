@@ -69,6 +69,12 @@ async function runDatabase() {
          const data = await dbTodos.find({}).toArray();
          res.send(data.reverse());
       });
+      // [===>>>) Database Collection Starts Here (<<<===] //
+      app.get('/todos', verifyUser, async (req, res) => {
+         const email = req?.user?.email;
+         const data = await dbTodos.find({ email }).toArray();
+         res.send(data.reverse());
+      });
    } finally {
       // await client.close();
    }
