@@ -33,3 +33,8 @@ export const DetailsInfo = styled.p`
       text-transform: lowercase;
    }
 `;
+
+export const DetailsNotFound = styled.p`
+   font-size: 1.6rem;
+   color: ${({ theme }) => theme.text.main.para};
+`;
