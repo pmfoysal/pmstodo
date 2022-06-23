@@ -88,11 +88,7 @@ async function runDatabase() {
                due: getTodayTime(),
             },
          };
-         const order = {
-            dates: {
-               add: -1,
-            },
-         };
+         const order = { 'dates.add': -1 };
          const data = await dbTodos.find(filter).sort(order).toArray();
          res.send(data);
       });
@@ -104,11 +100,7 @@ async function runDatabase() {
                due: { $gt: getTodayTime() },
             },
          };
-         const order = {
-            dates: {
-               due: 1,
-            },
-         };
+         const order = { 'dates.due': 1 };
          const data = await dbTodos.find(filter).sort(order).toArray();
          res.send(data);
       });
@@ -120,11 +112,7 @@ async function runDatabase() {
                due: { $lt: getTodayTime() },
             },
          };
-         const order = {
-            dates: {
-               due: 1,
-            },
-         };
+         const order = { 'dates.due': 1 };
          const data = await dbTodos.find(filter).sort(order).toArray();
          res.send(data);
       });
@@ -134,11 +122,7 @@ async function runDatabase() {
             email: req?.user?.email,
             isDone: true,
          };
-         const order = {
-            dates: {
-               done: -1,
-            },
-         };
+         const order = { 'dates.done': -1 };
          const data = await dbTodos.find(filter).sort(order).toArray();
          res.send(data);
       });
@@ -148,11 +132,7 @@ async function runDatabase() {
             email: req?.user?.email,
             tag: 'personal',
          };
-         const order = {
-            dates: {
-               due: 1,
-            },
-         };
+         const order = { 'dates.due': 1 };
          const data = await dbTodos.find(filter).sort(order).toArray();
          res.send(data);
       });
@@ -162,11 +142,7 @@ async function runDatabase() {
             email: req?.user?.email,
             tag: 'office',
          };
-         const order = {
-            dates: {
-               due: 1,
-            },
-         };
+         const order = { 'dates.due': 1 };
          const data = await dbTodos.find(filter).sort(order).toArray();
          res.send(data);
       });
@@ -176,11 +152,7 @@ async function runDatabase() {
             email: req?.user?.email,
             tag: 'home',
          };
-         const order = {
-            dates: {
-               due: 1,
-            },
-         };
+         const order = { 'dates.due': 1 };
          const data = await dbTodos.find(filter).sort(order).toArray();
          res.send(data);
       });
@@ -190,11 +162,7 @@ async function runDatabase() {
             email: req?.user?.email,
             tag: 'travel',
          };
-         const order = {
-            dates: {
-               due: 1,
-            },
-         };
+         const order = { 'dates.due': 1 };
          const data = await dbTodos.find(filter).sort(order).toArray();
          res.send(data);
       });
