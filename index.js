@@ -183,6 +183,22 @@ async function runDatabase() {
          res.send(data);
       });
 
+      app.get('/todos/home', verifyUser, async (req, res) => {
+         const filter = {
+            $query: {
+               email: req?.user?.email,
+               tag: 'home',
+            },
+            $orderby: {
+               date: {
+                  due: 1,
+               },
+            },
+         };
+         const data = await dbTodos.find(filter).toArray();
+         res.send(data);
+      });
+
       app.get('/todo/:id', verifyUser, async (req, res) => {
          const filter = { _id: ObjectId(req?.params?.id) };
          const data = await dbTodos.findOne(filter);
