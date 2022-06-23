@@ -19,12 +19,17 @@ export const ButtonContainer = styled.button`
       color: inherit;
    }
 
-   &:hover {
+   &:hover:not(:disabled) {
       opacity: 0.85;
    }
 
-   &:active {
+   &:active:not(:disabled) {
       transform: scale(0.975);
+   }
+
+   &:disabled {
+      opacity: 0.5;
+      cursor: default;
    }
 `;
 
