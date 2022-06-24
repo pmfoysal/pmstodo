@@ -10,7 +10,7 @@ export default function Layout() {
    const [hide, setHide] = useState(false);
    const { pathname } = useLocation();
 
-   const routings = ['/today', '/upcoming', '/overdue', '/archived', '/personal', '/office', '/home', '/travel'];
+   const routings = ['/', '/upcoming', '/overdue', '/archived', '/personal', '/office', '/home', '/travel'];
 
    useEffect(() => {
       if (routings.includes(pathname)) setHide(false);
