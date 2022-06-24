@@ -4,6 +4,7 @@ const express = require('express');
 const jwt = require('jsonwebtoken');
 const getTodayTime = require('./utilities/getTodayTime');
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
+const getStats = require('./utilities/getStats');
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -71,8 +72,15 @@ async function runDatabase() {
 
       // [===>>>) Todos Starts Here (<<<===] //
       app.get('/todos/all', verifyUser, verifyAdmin, async (req, res) => {
+         const order = { dateAdd: -1 };
+         const data = await dbTodos.find({}).sort(order).toArray();
+         res.send(data);
+      });
+
+      app.get('/todos/stats', verifyUser, verifyAdmin, async (req, res) => {
          const data = await dbTodos.find({}).toArray();
-         res.send(data.reverse());
+         const stats = await getStats(data);
+         res.send(stats);
       });
 
       app.get('/todos', verifyUser, async (req, res) => {

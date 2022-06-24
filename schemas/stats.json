@@ -1,0 +1,45 @@
+{
+   "total": {
+      "add": 0,
+      "due": 0,
+      "done": 0,
+      "user": 0
+   },
+   "week": {
+      "add": 0,
+      "due": 0,
+      "done": 0
+   },
+   "today": {
+      "add": 0,
+      "due": 0,
+      "done": 0
+   },
+   "upcoming": {
+      "add": 0,
+      "due": 0,
+      "done": 0
+   },
+   "personal": {
+      "add": 0,
+      "due": 0,
+      "done": 0
+   },
+   "office": {
+      "add": 0,
+      "due": 0,
+      "done": 0
+   },
+   "home": {
+      "add": 0,
+      "due": 0,
+      "done": 0
+   },
+   "travel": {
+      "add": 0,
+      "due": 0,
+      "done": 0
+   },
+   "overdue": 0,
+   "archived": 0
+}
