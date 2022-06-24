@@ -88,6 +88,7 @@ async function runDatabase() {
                due: getTodayTime(),
             },
          };
+         console.log('serverTime: ', getTodayTime());
          const order = { 'dates.add': -1 };
          const data = await dbTodos.find(filter).sort(order).toArray();
          res.send(data);
