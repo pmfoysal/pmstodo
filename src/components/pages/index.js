@@ -9,6 +9,5 @@ module.exports = {
    Personal: lazy(() => import('./personal/personal')),
    Archived: lazy(() => import('./archived/archived')),
    Upcoming: lazy(() => import('./upcoming/upcoming')),
-   AuthError: lazy(() => import('./authError/authError')),
    AuthPage: lazy(() => import('./authPage/authPage')),
 };
