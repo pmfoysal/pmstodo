@@ -1,6 +1,6 @@
 module.exports = function getTodayTime() {
-   const utcStr = new Date().toUTCString();
-   const utcArr = utcStr?.replaceAll(/[ ,]+/g, ',')?.split(',');
-   const date = `${utcArr[1]} ${utcArr[2]}, ${utcArr[3]}`;
-   return new Date(date).getTime() / 1000;
+   const iso = new Date().toISOString();
+   const [date] = iso?.split('T');
+   const local = `${date}T00:00:00.000Z`;
+   return new Date(local).getTime();
 };
