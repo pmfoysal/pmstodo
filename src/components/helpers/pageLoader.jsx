@@ -7,7 +7,7 @@ export default function PageLoader() {
    const theme = useTheme();
    return (
       <PageLoaderContainer>
-         <RotatingLines width='80' strokeWidth='4' animationDuration='0.5' strokeColor={theme.back.accent} />
+         <RotatingLines width='50' strokeWidth='4' animationDuration='0.5' strokeColor={theme.back.accent} />
       </PageLoaderContainer>
    );
 }

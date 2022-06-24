@@ -1,7 +1,11 @@
+import useTodo from '@hooks/useTodo';
 import { Icon } from '@iconify/react';
 import PageTitle from '@shared/pageTitle';
+import getStatus from '@utilities/getStatus';
+import PageLoader from '@helpers/pageLoader';
 import { useSearchParams } from 'react-router-dom';
 import React, { Fragment, useContext } from 'react';
+import getDateString from '@utilities/getDateString';
 import { StoreContext } from '@contexts/storeProvider';
 import { DetailsContainer, DetailsContent, DetailsInfo, DetailsNotFound } from './details.styled';
 
@@ -9,6 +13,9 @@ export default function Details() {
    const [query] = useSearchParams();
    const { user } = useContext(StoreContext);
    const view = query.get('view');
+   const { isLoading, data: todo = {} } = useTodo(view || '');
+   const { name, email, dateAdd, dateDue, dateDone, tag, isDone, task } = todo;
+   const notfound = !view || !todo?._id;
 
    return (
       <DetailsContainer>
@@ -25,44 +32,50 @@ export default function Details() {
                </span>
             )}
          </PageTitle>
-         <DetailsContent>
-            {!view ? (
-               <DetailsNotFound>Please select a task to view!</DetailsNotFound>
-            ) : (
-               <Fragment>
-                  <DetailsInfo>
-                     author: <span>foysal ahmmed</span>
-                  </DetailsInfo>
-                  <DetailsInfo>
-                     email: <span className='email'>pmfoysal@gmail.com</span>
-                  </DetailsInfo>
-                  <DetailsInfo>
-                     add date: <span>20 june, 2022</span>
-                  </DetailsInfo>
-                  <DetailsInfo>
-                     due date: <span>22 june, 2022</span>
-                  </DetailsInfo>
-                  <DetailsInfo>
-                     done date: <span>21 june, 2022</span>
-                  </DetailsInfo>
-                  <DetailsInfo>
-                     tag: <span className='tag'>personal</span>
-                  </DetailsInfo>
-                  <DetailsInfo>
-                     status: <span>completed</span>
-                  </DetailsInfo>
-               </Fragment>
-            )}
-            <br />
-            <div>
-               <PageTitle>task name</PageTitle>
-               {!view ? (
+         {isLoading ? (
+            <PageLoader />
+         ) : (
+            <DetailsContent>
+               {notfound ? (
                   <DetailsNotFound>Please select a task to view!</DetailsNotFound>
                ) : (
-                  <h1 className='task-name'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure, assumenda?</h1>
+                  <Fragment>
+                     <DetailsInfo>
+                        author: <span>{name}</span>
+                     </DetailsInfo>
+                     <DetailsInfo>
+                        email: <span className='email'>{email}</span>
+                     </DetailsInfo>
+                     <DetailsInfo>
+                        add date: <span>{getDateString(dateAdd)}</span>
+                     </DetailsInfo>
+                     <DetailsInfo>
+                        due date: <span>{getDateString(dateDue)}</span>
+                     </DetailsInfo>
+                     {dateDone ? (
+                        <DetailsInfo>
+                           done date: <span>{getDateString(dateDone)}</span>
+                        </DetailsInfo>
+                     ) : null}
+                     <DetailsInfo>
+                        tag: <span className='tag'>{tag}</span>
+                     </DetailsInfo>
+                     <DetailsInfo>
+                        status: <span className={getStatus(dateDue, isDone)}>{getStatus(dateDue, isDone)}</span>
+                     </DetailsInfo>
+                  </Fragment>
                )}
-            </div>
-         </DetailsContent>
+               <br />
+               <div>
+                  <PageTitle>task name</PageTitle>
+                  {notfound ? (
+                     <DetailsNotFound>Please select a task to view!</DetailsNotFound>
+                  ) : (
+                     <h1 className='task-name'>{task}</h1>
+                  )}
+               </div>
+            </DetailsContent>
+         )}
       </DetailsContainer>
    );
 }

@@ -1,7 +1,7 @@
 import getISOTime from './getISOTime';
 
 export default function getDayName(dueDate) {
-   const date = new Date(dueDate).toLocaleDateString('en-in');
+   const date = new Date(dueDate).toLocaleDateString('en-in', { dateStyle: 'long' });
    const today = getISOTime(new Date());
    if (today === dueDate) return 'today';
    else if (today === dueDate + 864e5) return 'yesterday';

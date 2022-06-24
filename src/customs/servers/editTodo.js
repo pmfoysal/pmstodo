@@ -1,7 +1,7 @@
 import { toast } from 'react-toastify';
 import pmaxios from '@middlewares/pmaxios';
 
-export default function editTodo(id, data, closer, refetch) {
+export default function editTodo(id, data, closer) {
    const tId = toast.loading('Please wait! Your task is updating...');
    pmaxios
       .put(`/todo/${id}`, data)
@@ -14,7 +14,6 @@ export default function editTodo(id, data, closer, refetch) {
                autoClose: 3000,
             });
             if (closer) closer(false);
-            if (refetch) refetch();
          }
       })
       .catch(error => {

@@ -15,7 +15,6 @@ import useTodos from '@hooks/useTodos';
 
 export default function AddTodo({ closer }) {
    const { user } = useContext(StoreContext);
-   const { refetch } = useTodos('today');
    const [tag, setTag] = useState('personal');
    const [date, setDate] = useState('');
    const [task, setTask] = useState('');
@@ -38,14 +37,10 @@ export default function AddTodo({ closer }) {
       };
    }
 
-   function getRefetchs() {
-      return [refetch];
-   }
-
    function submitHandler() {
       const dateOk = isValidDate(date);
       const taskOk = isValidTask(task);
-      if (dateOk && taskOk) addTodo(getData(), closer, getRefetchs());
+      if (dateOk && taskOk) addTodo(getData(), closer);
    }
 
    return (

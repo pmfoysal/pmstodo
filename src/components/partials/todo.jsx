@@ -9,7 +9,7 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import { TodoCheck, TodoContainer, TodoDate, TodoStatus } from './todo.styled';
 import { TodoButton, TodoTag, TodoTags, TodoTexts, TodoTitle } from './todo.styled';
 
-export default function Todo({ data, refetch }) {
+export default function Todo({ data }) {
    const navigate = useNavigate();
    const [query] = useSearchParams();
    const [popup, setPopup] = useState(false);
@@ -25,12 +25,12 @@ export default function Todo({ data, refetch }) {
 
    function isDoneHandler() {
       const date = new Date().toISOString();
-      const dateDone = new Date(date).getTime();
-      editTodo(_id, { isDone: !isDone, dateDone }, undefined, refetch);
+      const dateDone = !isDone ? new Date(date).getTime() : 0;
+      editTodo(_id, { isDone: !isDone, dateDone }, undefined);
    }
 
    function deleteHandler() {
-      deleteTodo(_id, setPopup, refetch);
+      deleteTodo(_id, setPopup);
    }
 
    return (

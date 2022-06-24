@@ -32,6 +32,26 @@ export const DetailsInfo = styled.p`
    .email {
       text-transform: lowercase;
    }
+
+   .tag {
+      color: #8b008b;
+   }
+
+   .ongoing {
+      color: #1e90ff;
+   }
+
+   .pending {
+      color: #7b68ee;
+   }
+
+   .overdue {
+      color: #ff4500;
+   }
+
+   .completed {
+      color: #2aab2a;
+   }
 `;
 
 export const DetailsNotFound = styled.p`

@@ -1,7 +1,7 @@
 import { toast } from 'react-toastify';
 import pmaxios from '@middlewares/pmaxios';
 
-export default function deleteTodo(id, closer, refetch) {
+export default function deleteTodo(id, closer) {
    const tId = toast.loading('Please wait! Your task is deleting...');
    pmaxios
       .delete(`/todo/${id}`)
@@ -14,7 +14,6 @@ export default function deleteTodo(id, closer, refetch) {
                autoClose: 3000,
             });
             if (closer) closer(false);
-            if (refetch) refetch();
          }
       })
       .catch(error => {

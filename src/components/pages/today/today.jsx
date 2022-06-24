@@ -5,13 +5,13 @@ import PageTitle from '@shared/pageTitle';
 import { TodayContent } from './today.styled';
 
 export default function Today() {
-   const { isLoading, data: todos, refetch } = useTodos('today');
+   const { isLoading, data: todos = [] } = useTodos('today');
    return (
       <Fragment>
          <PageTitle>today's todos</PageTitle>
          <TodayContent>
             {todos?.map(todo => (
-               <Todo key={todo?._id} data={todo} refetch={refetch} />
+               <Todo key={todo?._id} data={todo} />
             ))}
          </TodayContent>
       </Fragment>
