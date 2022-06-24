@@ -1,7 +1,7 @@
 import { toast } from 'react-toastify';
 import pmaxios from '@middlewares/pmaxios';
 
-export default function addTodo(data, closer) {
+export default function addTodo(data, closer, refetchs) {
    const tId = toast.loading('Please wait! Your task is adding...');
    pmaxios
       .post('/todo', data)
@@ -14,6 +14,11 @@ export default function addTodo(data, closer) {
                autoClose: 3000,
             });
             if (closer) closer(false);
+            if (refetchs?.length) {
+               refetchs?.forEach(item => {
+                  item();
+               });
+            }
          }
       })
       .catch(error => {

@@ -5,24 +5,20 @@ import Input from '@partials/input';
 import Button from '@partials/button';
 import addTodo from '@servers/addTodo';
 import Backdrop from '@helpers/backdrop';
+import getISOTime from '@utilities/getISOTime';
 import isValidDate from '@validations/isValidDate';
 import isValidTask from '@validations/isValidTask';
 import { StoreContext } from '@contexts/storeProvider';
 import { AddTodoTag, AddTodoTags, AddTodoTitle } from './addTodo.styled';
 import { AddTodoButtons, AddTodoContainer, AddTodoLabel } from './addTodo.styled';
+import useTodos from '@hooks/useTodos';
 
 export default function AddTodo({ closer }) {
    const { user } = useContext(StoreContext);
+   const { refetch } = useTodos('today');
    const [tag, setTag] = useState('personal');
    const [date, setDate] = useState('');
    const [task, setTask] = useState('');
-
-   function getISOTime(date) {
-      const iso = new Date(date).toISOString();
-      const [dddd] = iso?.split('T');
-      const local = `${dddd}T00:00:00.000Z`;
-      return new Date(local).getTime();
-   }
 
    function closeHandler() {
       if (closer) closer(false);
@@ -42,10 +38,14 @@ export default function AddTodo({ closer }) {
       };
    }
 
+   function getRefetchs() {
+      return [refetch];
+   }
+
    function submitHandler() {
       const dateOk = isValidDate(date);
       const taskOk = isValidTask(task);
-      if (dateOk && taskOk) addTodo(getData(), closer);
+      if (dateOk && taskOk) addTodo(getData(), closer, getRefetchs());
    }
 
    return (

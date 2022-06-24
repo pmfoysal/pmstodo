@@ -14,7 +14,6 @@ export default function Toaster() {
          draggable
          pauseOnHover={false}
          transition={Zoom}
-         limit={1}
       />
    );
 }
