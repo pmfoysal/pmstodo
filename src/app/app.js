@@ -3,9 +3,11 @@ import SiteLoader from '@helpers/siteLoader';
 import RequireUser from '@helpers/requireUser';
 import { Route, Routes } from 'react-router-dom';
 import { StoreContext } from '@contexts/storeProvider';
-import { Archived, Home, Office, Overdue } from '@pages';
+import { Archived, Dashboard, Home, Office, Overdue } from '@pages';
 import { Personal, Today, Travel, Upcoming } from '@pages';
 import React, { Suspense, Fragment, lazy, useContext } from 'react';
+import RequireAdmin from '@helpers/requireAdmin';
+import NotFound from '@shared/notFound';
 const Layout = lazy(() => import('@layouts/layout'));
 
 export default function App() {
@@ -27,7 +29,8 @@ export default function App() {
                      <Route path='archived' element={<Archived />} />
                      <Route path='personal' element={<Personal />} />
                      <Route path='upcoming' element={<Upcoming />} />
-                     <Route path='*' element={<h1>Opps! Page Not Found</h1>} />
+                     <Route path='dashboard' element={<RequireAdmin then={<Dashboard />} />} />
+                     <Route path='*' element={<NotFound text='Opps! Page not found!' />} />
                   </Route>
                </Routes>
             </Suspense>

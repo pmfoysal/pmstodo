@@ -24,6 +24,10 @@ export const LayoutRightSide = styled.article`
    grid-template-columns: 4fr 3fr;
    padding: 2.5rem;
    gap: 3rem;
+
+   &.true {
+      grid-template-columns: 1fr;
+   }
 `;
 
 export const LayoutRightParts = styled.aside`

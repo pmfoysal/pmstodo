@@ -10,4 +10,5 @@ module.exports = {
    Archived: lazy(() => import('./archived/archived')),
    Upcoming: lazy(() => import('./upcoming/upcoming')),
    AuthPage: lazy(() => import('./authPage/authPage')),
+   Dashboard: lazy(() => import('./dashboard/dashboard')),
 };
