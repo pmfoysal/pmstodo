@@ -5,8 +5,10 @@ export default function useTodo(id) {
    return useQuery(
       ['todo', id],
       async () => {
-         const { data } = await pmaxios.get(`/todo/${id}`);
-         return data;
+         if (id) {
+            const { data } = await pmaxios.get(`/todo/${id}`);
+            return data;
+         } else return {};
       },
       { refetchInterval: 1000 }
    );

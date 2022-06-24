@@ -1,21 +1,20 @@
 import useTodo from '@hooks/useTodo';
 import { Icon } from '@iconify/react';
+import React, { Fragment } from 'react';
 import PageTitle from '@shared/pageTitle';
 import getStatus from '@utilities/getStatus';
 import PageLoader from '@helpers/pageLoader';
 import { useSearchParams } from 'react-router-dom';
-import React, { Fragment, useContext } from 'react';
 import getDateString from '@utilities/getDateString';
-import { StoreContext } from '@contexts/storeProvider';
 import { DetailsContainer, DetailsContent, DetailsInfo, DetailsNotFound } from './details.styled';
 
 export default function Details() {
    const [query] = useSearchParams();
-   const { user } = useContext(StoreContext);
    const view = query.get('view');
-   const { isLoading, data: todo = {} } = useTodo(view || '');
+   const { isLoading, data: todo = {} } = useTodo(view);
    const { name, email, dateAdd, dateDue, dateDone, tag, isDone, task } = todo;
    const notfound = !view || !todo?._id;
+   const waiting = view && isLoading;
 
    return (
       <DetailsContainer>
@@ -32,7 +31,7 @@ export default function Details() {
                </span>
             )}
          </PageTitle>
-         {isLoading ? (
+         {waiting ? (
             <PageLoader />
          ) : (
             <DetailsContent>
