@@ -17,22 +17,28 @@ export default function AddTodo({ closer }) {
    const [date, setDate] = useState('');
    const [task, setTask] = useState('');
 
+   function getISOTime(date) {
+      const iso = new Date(date).toISOString();
+      const [dddd] = iso?.split('T');
+      const local = `${dddd}T00:00:00.000Z`;
+      return new Date(local).getTime();
+   }
+
    function closeHandler() {
       if (closer) closer(false);
    }
 
    function getData() {
+      const today = new Date().toISOString();
       return {
          name: user?.name,
          email: user?.email,
          tag,
          task,
          isDone: false,
-         dates: {
-            add: new Date().getTime() / 1000,
-            due: new Date(date).getTime() / 1000,
-            done: 0,
-         },
+         dateAdd: new Date(today).getTime(),
+         dateDue: getISOTime(date),
+         dateDone: 0,
       };
    }
 
