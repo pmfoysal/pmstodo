@@ -95,6 +95,7 @@ async function runDatabase() {
          const filter = {
             email: req?.user?.email,
             dateDue: { $gt: getTodayTime() },
+            isDone: false,
          };
          const order = { dateDue: 1 };
          const data = await dbTodos.find(filter).sort(order).toArray();
@@ -105,6 +106,7 @@ async function runDatabase() {
          const filter = {
             email: req?.user?.email,
             dateDue: { $lt: getTodayTime() },
+            isDone: false,
          };
          const order = { dateDue: 1 };
          const data = await dbTodos.find(filter).sort(order).toArray();
