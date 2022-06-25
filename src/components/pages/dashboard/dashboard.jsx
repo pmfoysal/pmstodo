@@ -1,14 +1,15 @@
-import React, { Fragment } from 'react';
-import useStats from '@hooks/useStats';
-import getStats from '@servers/getStats';
-import PageTitle from '@shared/pageTitle';
-import InfoCard from './partials/infoCard';
-import { DashboardCards, DashboardContainer, DashboardTodoArea, DashboardTodos, DashboardTodosContent } from './dashboard.styled';
-import Details from '../details/details';
-import useAllTodos from '@hooks/useAllTodos';
-import EmptyText from '@shared/emptyText';
 import Todo from '@partials/todo';
+import useStats from '@hooks/useStats';
+import React, { Fragment } from 'react';
+import getStats from '@servers/getStats';
+import Details from '../details/details';
+import PageTitle from '@shared/pageTitle';
+import EmptyText from '@shared/emptyText';
+import InfoCard from './partials/infoCard';
+import useAllTodos from '@hooks/useAllTodos';
 import PageLoader from '@helpers/pageLoader';
+import { DashboardTodos, DashboardTodosContent } from './dashboard.styled';
+import { DashboardCards, DashboardContainer, DashboardTodoArea } from './dashboard.styled';
 
 export default function Dashboard() {
    const { isLoading: statsLoading, data: stats = {} } = useStats();

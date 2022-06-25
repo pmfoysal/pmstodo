@@ -11,7 +11,6 @@ import isValidTask from '@validations/isValidTask';
 import { StoreContext } from '@contexts/storeProvider';
 import { AddTodoTag, AddTodoTags, AddTodoTitle } from './addTodo.styled';
 import { AddTodoButtons, AddTodoContainer, AddTodoLabel } from './addTodo.styled';
-import useTodos from '@hooks/useTodos';
 
 export default function AddTodo({ closer }) {
    const { user } = useContext(StoreContext);
