@@ -39,7 +39,7 @@ export default function InfoCard({ name, add, due, done, user, percent, back, fr
                <circle className='shadow' />
                <circle className='progress' />
             </InfoCardProgress>
-            <span className='text'>{percent}%</span>
+            <span className='text'>{percent?.toFixed(0)}%</span>
          </InfoCardImages>
       </InfoCardContainer>
    );
