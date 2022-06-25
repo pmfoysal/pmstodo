@@ -1,12 +1,28 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+import useStats from '@hooks/useStats';
+import getStats from '@servers/getStats';
 import PageTitle from '@shared/pageTitle';
-import { DashboardCards } from './dashboard.styled';
+import InfoCard from './partials/infoCard';
+import { DashboardCards, DashboardContainer } from './dashboard.styled';
 
 export default function Dashboard() {
+   const { isLoading, data: stats = {} } = useStats();
+
+   function renderStats() {
+      const allStats = getStats(stats);
+      let index = 0;
+      const cards = [];
+      for (const item in allStats) {
+         index++;
+         cards.push(<InfoCard key={`${item}-${index}`} {...allStats[item]} />);
+      }
+      return cards;
+   }
+
    return (
-      <Fragment>
+      <DashboardContainer>
          <PageTitle>overall statistics</PageTitle>
-         <DashboardCards>ami</DashboardCards>
-      </Fragment>
+         <DashboardCards>{renderStats()};</DashboardCards>
+      </DashboardContainer>
    );
 }

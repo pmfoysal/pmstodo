@@ -1,13 +1,13 @@
 import Toaster from '@helpers/toaster';
+import NotFound from '@shared/notFound';
 import SiteLoader from '@helpers/siteLoader';
 import RequireUser from '@helpers/requireUser';
 import { Route, Routes } from 'react-router-dom';
+import RequireAdmin from '@helpers/requireAdmin';
 import { StoreContext } from '@contexts/storeProvider';
-import { Archived, Dashboard, Home, Office, Overdue } from '@pages';
 import { Personal, Today, Travel, Upcoming } from '@pages';
 import React, { Suspense, Fragment, lazy, useContext } from 'react';
-import RequireAdmin from '@helpers/requireAdmin';
-import NotFound from '@shared/notFound';
+import { Archived, Dashboard, Home, Office, Overdue } from '@pages';
 const Layout = lazy(() => import('@layouts/layout'));
 
 export default function App() {
