@@ -11,7 +11,7 @@ module.exports = function getToday(data) {
       const dueNum = getDateTime(todo?.dateDue);
       const doneNum = getDateTime(todo?.dateDone);
       if (todNum === addNum) add += 1;
-      if (todNum > dueNum && !todo?.isDone) due += 1;
+      if (todNum === dueNum) due += 1;
       if (todNum === doneNum) done += 1;
    });
    return { add, due, done };
