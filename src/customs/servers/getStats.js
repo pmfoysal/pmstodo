@@ -39,7 +39,7 @@ export default function getStats(stats) {
       },
       today: {
          name: "today's todos",
-         percent: (today?.done / today?.add) * 100 || 0,
+         percent: (today?.done / today?.due) * 100 || 0,
          ...colors3,
          add: today?.add,
          due: today?.due,
