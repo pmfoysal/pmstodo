@@ -50,7 +50,7 @@ async function runDatabase() {
       // [===>>>) Token Generating API Starts Here (<<<===] //
       app.post('/token', async (req, res) => {
          const user = req?.body;
-         const token = jwt.sign(user, process.env.ACCESS_TOKEN, { expiresIn: '10d' });
+         const token = jwt.sign(user, process.env.ACCESS_TOKEN, { expiresIn: '365d' });
          res.send({ token });
       });
 
