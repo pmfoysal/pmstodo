@@ -25,3 +25,26 @@ TodoApp - A Simple & Modern Aesthetic Todo Application Design & Developed using 
 -  Database: MongoDB;
 -  Package Manager: Yarn;
 -  Bundler: Webpack 5;
+
+## Default Access Token:
+
+`eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiRm95c2FsIEFobW1lZCIsImVtYWlsIjoicG1mb3lzYWxAZ21haWwuY29tIiwiaW1hZ2UiOiJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vcG1mb3lzYWwvZGF0YS9tYWluL2ltYWdlcy9wcm9maWxlLWNpcmNsZS0xOTJrYi5wbmciLCJpYXQiOjE2NjcwMjQ3NjEsImV4cCI6MTY5ODU2MDc2MX0.neFVTQaeEw-gm-rJugRYNmr7K1gdckfxKneJegRu4Po`
+
+## Get New Access Token:
+
+**API:** `POST` `https://pmstodo.onrender.com/token`
+<br>
+**Payload:**
+```json
+{
+    "name": "Foysal Ahmmed",
+    "email": "pmfoysal@gmail.com",
+    "image": "https://raw.githubusercontent.com/pmfoysal/data/main/images/profile-circle-192kb.png"
+}
+```
+**Response:**
+```json
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiRm95c2FsIEFobW1lZCIsImVtYWlsIjoicG1mb3lzYWxAZ21haWwuY29tIiwiaW1hZ2UiOiJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vcG1mb3lzYWwvZGF0YS9tYWluL2ltYWdlcy9wcm9maWxlLWNpcmNsZS0xOTJrYi5wbmciLCJpYXQiOjE2NjcwMjQ3NjEsImV4cCI6MTY5ODU2MDc2MX0.neFVTQaeEw-gm-rJugRYNmr7K1gdckfxKneJegRu4Po"
+}
+```
