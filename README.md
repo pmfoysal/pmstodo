@@ -1,6 +1,6 @@
 # Todoapp - A Simple & Modern Todo Application!
 
-TodoApp - A Simple & Modern Todo Application Design & Developed by Foysal Ahmmed using ReactJS! Live: https://todo220625.netlify.app
+TodoApp - A Simple & Modern Aesthetic Todo Application Design & Developed using ReactJS! Live: https://pmstodo.netlify.app/
 
 ## Description of This Website:
 
@@ -20,7 +20,7 @@ TodoApp - A Simple & Modern Todo Application Design & Developed by Foysal Ahmmed
 -  Authentication: None;
 -  Authorization: JSON Web Token (JWT);
 -  Source Control: Git & GitHub;
--  Hosting: Heroku & Netlify;
+-  Hosting: Render & Netlify;
 -  Server: NodeJS, ExpressJS;
 -  Database: MongoDB;
 -  Package Manager: Yarn;
