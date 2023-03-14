@@ -2,9 +2,9 @@ require('dotenv').config();
 const cors = require('cors');
 const express = require('express');
 const jwt = require('jsonwebtoken');
+const getStats = require('./utilities/getStats');
 const getTodayTime = require('./utilities/getTodayTime');
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
-const getStats = require('./utilities/getStats');
 
 const app = express();
 const port = process.env.PORT || 5000;
