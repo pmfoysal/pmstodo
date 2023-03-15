@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const pmaxios = axios.create({
-   baseURL: process.env.REACT_APP_BASE_API_URL,
+   baseURL: 'https://pmstodo-1-m0244492.deta.app',
 });
 
 pmaxios.interceptors.request.use(

@@ -6,6 +6,10 @@
 # testing
 /coverage
 test-users.txt
+.env
+env.txt
+Spacefile
+.space
 
 # production
 /build
