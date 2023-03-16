@@ -28,23 +28,23 @@ TodoApp - A Simple & Modern Aesthetic Todo Application Design & Developed using 
 
 ## Default Access Token:
 
-`eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiRm95c2FsIEFobW1lZCIsImVtYWlsIjoicG1mb3lzYWxAZ21haWwuY29tIiwiaW1hZ2UiOiJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vcG1mb3lzYWwvZGF0YS9tYWluL2ltYWdlcy9wcm9maWxlLWNpcmNsZS0xOTJrYi5wbmciLCJpYXQiOjE2NjcwMjQ3NjEsImV4cCI6MTY5ODU2MDc2MX0.neFVTQaeEw-gm-rJugRYNmr7K1gdckfxKneJegRu4Po`
+```eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiUnViZW4gSGVuZGVyc29uIiwiZW1haWwiOiJydWJlbkBnbWFpbC5jb20iLCJpbWFnZSI6Imh0dHBzOi8vcmFuZG9tdXNlci5tZS9hcGkvcG9ydHJhaXRzL21lbi80NC5qcGciLCJpYXQiOjE2Nzg5ODcyNzgsImV4cCI6MTcxMDUyMzI3OH0.dxGLn0Pm1GU0mMsuSDmH63y8k6l1tJPvHkRtUMkD1Ck```
 
 ## Get New Access Token:
 
-**API:** `POST` `https://pmstodo.onrender.com/token`
+**API:** `POST` `https://pmstodo-1-m0244492.deta.app/token`
 <br>
 **Payload:**
 ```json
 {
-    "name": "Foysal Ahmmed",
-    "email": "pmfoysal@gmail.com",
-    "image": "https://raw.githubusercontent.com/pmfoysal/data/main/images/profile-circle-192kb.png"
+    "name": "Your Name",
+    "email": "Your Email ID",
+    "image": "Your Image URL"
 }
 ```
 **Response:**
 ```json
 {
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiRm95c2FsIEFobW1lZCIsImVtYWlsIjoicG1mb3lzYWxAZ21haWwuY29tIiwiaW1hZ2UiOiJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vcG1mb3lzYWwvZGF0YS9tYWluL2ltYWdlcy9wcm9maWxlLWNpcmNsZS0xOTJrYi5wbmciLCJpYXQiOjE2NjcwMjQ3NjEsImV4cCI6MTY5ODU2MDc2MX0.neFVTQaeEw-gm-rJugRYNmr7K1gdckfxKneJegRu4Po"
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiUnViZW4gSGVuZGVyc29uIiwiZW1haWwiOiJydWJlbkBnbWFpbC5jb20iLCJpbWFnZSI6Imh0dHBzOi8vcmFuZG9tdXNlci5tZS9hcGkvcG9ydHJhaXRzL21lbi80NC5qcGciLCJpYXQiOjE2Nzg5ODcyNzgsImV4cCI6MTcxMDUyMzI3OH0.dxGLn0Pm1GU0mMsuSDmH63y8k6l1tJPvHkRtUMkD1Ck"
 }
 ```
